@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bxmbtbsu6bjkd"]
+
+[ext_resource type="Script" uid="uid://bqrqdbb7ne076" path="res://scripts/main.gd" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dn7rfbew8osop" path="res://scripts/player.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://wiobdrsaf0t" path="res://scenes/wood.tscn" id="3_sugp2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eeur6"]
+radius = 12.0
+
+[node name="main" type="Node2D" unique_id=565810100]
+position = Vector2(62, 118)
+script = ExtResource("1_0wfyh")
+
+[node name="player" type="CharacterBody2D" parent="." unique_id=378654399]
+script = ExtResource("1_o5qli")
+
+[node name="collisionshape2d" type="CollisionShape2D" parent="player" unique_id=1915567732]
+shape = SubResource("CircleShape2D_eeur6")
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1711052105]
+enabled = false
+
+[node name="wood" parent="." unique_id=1937404416 instance=ExtResource("3_sugp2")]
+position = Vector2(100, 60)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://wiobdrsaf0t"]
+
+[ext_resource type="Script" uid="uid://bsdk773e81bac" path="res://scripts/wood.gd" id="1_y25wi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eeur6"]
+radius = 14.0
+
+[node name="wood" type="Area2D" unique_id=1937404416]
+script = ExtResource("1_y25wi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1132785881]
+shape = SubResource("CircleShape2D_eeur6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
